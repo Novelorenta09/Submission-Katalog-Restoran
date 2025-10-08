@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .skip-to-content {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip-to-content:focus {
+    left: 10px;
+    top: 10px;
+    z-index: 1000;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+  </style>
+</head>  
+  <body>
+      <a href="#content" class="skip-to-content" id="skip-to-content">Skip to Content</a>
+      <header>
+          <h1>Header</h1>
+      </header>
+      <main id="main-content">
+        <button id="content" class="content">button</button>
+          <h2>Main Content</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at velit nec nulla condimentum aliquet.</p>
+      </main>
+      <footer>
+          <p>Footer</p>
+      </footer>
+      <script >
+        const skipToContent = document.getElementById('skip-to-content');
+        skipToContent.addEventListener('focus', function() {
+            this.style.left = '10px';
+        });
+        skipToContent.addEventListener('blur', function() {
+            this.style.left = '-9999px';
+        });
+
+      </script>
+
+  
+  
+  
+</body>
+</html>
